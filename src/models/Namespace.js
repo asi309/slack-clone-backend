@@ -9,6 +9,12 @@ const NamespaceSchema = new mongoose.Schema({
       ref: 'Room',
     },
   ],
+  admin: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User',
+    },
+  ],
 });
 
 module.exports = mongoose.model('Namespace', NamespaceSchema);

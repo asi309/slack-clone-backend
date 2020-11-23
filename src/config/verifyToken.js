@@ -9,7 +9,7 @@ function verifyToken(req, res, next) {
   if (!jwtPayload) {
     return res.status(401).json({ message: 'Not Authorized' });
   }
-  req.token = token;
+  req.user = jwtPayload.user;
   next();
 }
 
